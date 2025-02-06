@@ -1,27 +1,59 @@
+@import url("../styles/index.css");
+@import url("../styles/embla.css");
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+@import url('https://fonts.googleapis.com/css2?  family=Montserrat:ital,wght@0,100;0,200;1,100;1,200&display=swap');
 
-:root {
-  --foreground-rgb: 0, 0, 0;
-  --background-start-rgb: 214, 219, 220;
-  --background-end-rgb: 255, 255, 255;
-}
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --foreground-rgb: 255, 255, 255;
-    --background-start-rgb: 0, 0, 0;
-    --background-end-rgb: 0, 0, 0;
+
+@layer base {
+  ul, ol {
+    list-style: revert;
+  }
+  li{
+    margin-left: 16px;
   }
 }
 
-body {
-  color: rgb(var(--foreground-rgb));
-  background: linear-gradient(
-      to bottom,
-      transparent,
-      rgb(var(--background-end-rgb))
-    )
-    rgb(var(--background-start-rgb));
+body{
+  font-family: 'Montserrat', sans-serif;
+}
+
+.container {
+  width: 1280px;
+  margin: 0 auto; 
+  padding: 0 16px;
+}
+
+
+@media (max-width: 1279px) and (min-width: 1024px) {
+  .container {
+    max-width: 960px;
+    margin: 0 auto;
+    padding: 0 16px;
+  }
+}
+
+@media (max-width: 1023px) and (min-width: 768px) {
+  .container {
+    max-width: 768px;
+    margin: 0 auto;
+    padding: 0 16px;
+  }
+}
+
+@media (max-width: 767px) {
+  .container {
+    max-width: 100%;
+  }
+}
+
+
+.hero-1{
+  font-family: 'azonix', sans-serif;
+}
+
+.page-footer{
+  background-color: black;
 }
