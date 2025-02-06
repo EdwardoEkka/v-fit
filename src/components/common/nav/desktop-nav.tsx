@@ -93,7 +93,7 @@ export function DesktopNav() {
                     {Categories[selectedCategory].cat}
                   </li>
                   {Categories[selectedCategory].sub.map((subcat, index) => (
-                    <div>
+                    <div key={index}>
                       <li
                         className="cursor-pointer  uppercase py-2 flex "
                         onClick={() => {
@@ -124,6 +124,7 @@ export function DesktopNav() {
                 <ul className="list-none">
                   {Categories.map((cat, index) => (
                     <li
+                      key={index}
                       className="cursor-pointer  uppercase py-2 flex gap-2 justify-between items-center"
                       onClick={() => {
                         setIsCatSelected(true);

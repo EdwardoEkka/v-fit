@@ -17,7 +17,7 @@ const SubCategoryPage=({cat,sub}:{cat:string,sub:string})=>{
         <div className="container grid lg:grid-cols-3 gap-4 py-6 sm:grid-cols-2 grid-cols-1">
             {
                 products.map((item:Product,index:any)=>(
-                    <ProductCard product={item}/>
+                    <ProductCard product={item} key={index}/>
                 ))
             }
         </div>
