@@ -37,7 +37,7 @@ const Page=()=>{
         <div className="grid lg:grid-cols-3 gap-4 py-4 sm:grid-cols-2 grid-cols-1">
             {
                 products.map((item:Product,index:any)=>(
-                    <ProductCard product={item}/>
+                    <ProductCard product={item} key={index}/>
                 ))
             }
         </div>

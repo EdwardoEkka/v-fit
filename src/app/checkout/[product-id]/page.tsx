@@ -147,7 +147,7 @@ const Page = () => {
                   </div>
                   <div className="mt-4 flex gap-2 flex-wrap">
                     {orderProduct.category.tags?.map((tag, index) => (
-                      <span className="px-3 py-1 text-sm font-medium text-gray-700 bg-gray-200 rounded-full">
+                      <span className="px-3 py-1 text-sm font-medium text-gray-700 bg-gray-200 rounded-full" key={index}>
                         {tag}
                       </span>
                     ))}

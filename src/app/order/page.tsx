@@ -1,10 +1,11 @@
 "use client"
+import { FC } from "react";
 import Footer from "@/components/common/footer/footer"
 import { MainNav } from "@/components/common/nav/main-navbar"
 import withAuth from "../auth/withAuth"
 
 
-const OrderPage=()=>{
+const OrderPage: FC=()=>{
     return(
         <div>
         <MainNav/>
@@ -14,4 +15,6 @@ const OrderPage=()=>{
     )
 }
 
-export default withAuth(OrderPage);
+const ProtectedApp = withAuth(OrderPage) as FC;
+
+export default ProtectedApp;

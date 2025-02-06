@@ -1,4 +1,5 @@
 "use client";
+import { FC } from "react";
 import { useState, useEffect } from "react";
 import { MainNav } from "@/components/common/nav/main-navbar";
 import withAuth from "../auth/withAuth";
@@ -9,7 +10,7 @@ import { getProductById } from "@/service";
 import { Product, Cart } from "../types";
 import { useRouter } from "next/navigation";
 
-const Page = () => {
+const Page: FC = () => {
   const { user } = useUserStore();
   const [userId, setUserId] = useState<any>(null);
   const [cart, setCart] = useState<Cart[]>([]);
@@ -38,7 +39,7 @@ const Page = () => {
         <div className="container">
           <div className="w-full grid grid-col-1 md:grid-cols-2 py-6 gap-4">
             {cart.map((cart, index) => (
-              <ProductInCart productId={cart.productId} cartId={cart.id} />
+              <ProductInCart productId={cart.productId} cartId={cart.id} key={index}/>
             ))}
           </div>
         </div>
@@ -48,7 +49,9 @@ const Page = () => {
   );
 };
 
-export default withAuth(Page);
+const ProtectedApp = withAuth(Page) as FC;
+
+export default ProtectedApp;
 
 const ProductInCart = ({
   productId,

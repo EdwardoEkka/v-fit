@@ -1,17 +1,18 @@
 "use client";
+import { FC } from "react";
 import withAuth from "../auth/withAuth";
 import { useUserStore } from "@/stores/globalStore";
 import { signOutUser } from "@/service";
 import { MainNav } from "@/components/common/nav/main-navbar";
 import Footer from "@/components/common/footer/footer";
 
-const App = () => {
+const App: FC = () => {
   const { user, setUser } = useUserStore();
 
   return (
     <div>
       <MainNav />
-      <div className="min-h-screen flex flex-col items-center justify-center min-h-[70vh] px-4 sm:px-6 lg:px-8 bg-gradient-to-br from-black via-gray-900 to-black">
+      <div className="min-h-screen flex flex-col items-center justify-center px-4 sm:px-6 lg:px-8 bg-gradient-to-br from-black via-gray-900 to-black">
         <div className="relative w-full max-w-md bg-gradient-to-br from-gray-800 to-gray-900 shadow-2xl rounded-2xl p-8 space-y-6 border border-gray-700/80 backdrop-blur-md">
           {/* Decorative Glow */}
           <div className="absolute inset-0 blur-[80px] bg-gradient-to-br from-blue-500 via-purple-500 to-pink-500 opacity-30 pointer-events-none"></div>
@@ -51,4 +52,6 @@ const App = () => {
   );
 };
 
-export default withAuth(App);
+const ProtectedApp = withAuth(App) as FC;
+
+export default ProtectedApp;
