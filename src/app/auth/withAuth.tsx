@@ -12,7 +12,7 @@ const withAuth = <P extends object>(
   Component: React.ComponentType<P>
 ): React.FC<P & WithAuthProps> => {
   const AuthenticatedComponent: React.FC<P & WithAuthProps> = (props) => {
-    const pathname=usePathname();
+    const pathname = usePathname();
     const { isAuthenticated, initializeAuthListener } = useUserStore();
     const [isCheckingAuth, setIsCheckingAuth] = useState(true); // Track listener initialization
     const router = useRouter();
@@ -33,7 +33,6 @@ const withAuth = <P extends object>(
     if (isCheckingAuth || !isAuthenticated) return <div>Loading...</div>;
 
     return <Component {...(props as P)} />;
- 
   };
 
   return AuthenticatedComponent;

@@ -39,7 +39,11 @@ const Page: FC = () => {
         <div className="container">
           <div className="w-full grid grid-col-1 md:grid-cols-2 py-6 gap-4">
             {cart.map((cart, index) => (
-              <ProductInCart productId={cart.productId} cartId={cart.id} key={index}/>
+              <ProductInCart
+                productId={cart.productId}
+                cartId={cart.id}
+                key={index}
+              />
             ))}
           </div>
         </div>

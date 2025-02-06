@@ -18,7 +18,7 @@ const Blog = () => {
               />
             </div>
             <h3 className="text-base text-center font-bold">
-                Are You Becoming The Person You Want To Be?
+              Are You Becoming The Person You Want To Be?
             </h3>
             <p className="underline">READ MORE</p>
           </div>
@@ -30,7 +30,9 @@ const Blog = () => {
                 className="w-full h-full object-scale-down"
               />
             </div>
-            <h3 className="text-base text-center font-bold">Look In The Mirror That's Your Competition</h3>
+            <h3 className="text-base text-center font-bold">
+              Look In The Mirror That is Your Competition
+            </h3>
             <p className="underline">READ MORE</p>
           </div>
 
@@ -42,7 +44,9 @@ const Blog = () => {
                 className="w-full h-full object-scale-down"
               />
             </div>
-            <h3 className="text-base text-center font-bold">Action Is The Foundational Key To All Success.</h3>
+            <h3 className="text-base text-center font-bold">
+              Action Is The Foundational Key To All Success.
+            </h3>
             <p className="underline">READ MORE</p>
           </div>
         </div>

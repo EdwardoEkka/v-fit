@@ -28,7 +28,9 @@ export function MobileNav() {
 
       {/* Slide-in Menu */}
       <div
-        className={`fixed top-0 left-0 h-full bg-gray-900/80 backdrop-blur-lg text-white z-50 w-[75%] shadow-xl ${isMenuOpen ? "block" : "hidden"}`}
+        className={`fixed top-0 left-0 h-full bg-gray-900/80 backdrop-blur-lg text-white z-50 w-[75%] shadow-xl ${
+          isMenuOpen ? "block" : "hidden"
+        }`}
       >
         <div className="p-6 flex flex-col h-full">
           <div className="flex justify-between items-center mb-6">

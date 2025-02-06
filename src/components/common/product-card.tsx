@@ -18,7 +18,7 @@ const ProductCard: React.FC<{ product: Product }> = ({ product }) => {
     >
       {/* Decorative Glow */}
       <div className="absolute inset-0 blur-[80px] bg-gradient-to-br from-blue-500 via-purple-500 to-pink-500 opacity-30 pointer-events-none"></div>
-      
+
       {/* Product Image */}
       <div className="relative bg-white rounded-xl overflow-hidden">
         {images?.[0] ? (
@@ -68,7 +68,9 @@ const ProductCard: React.FC<{ product: Product }> = ({ product }) => {
               </span>
             </div>
           ) : (
-            <span className="text-white">{price.currency} {price.price}</span>
+            <span className="text-white">
+              {price.currency} {price.price}
+            </span>
           )}
         </div>
 

@@ -27,9 +27,7 @@ const App: FC = () => {
             <p className="text-lg font-medium text-gray-200">
               {user?.displayName || "Guest User"}
             </p>
-            <p className="text-lg font-medium text-gray-200">
-              {user?.uid}
-            </p>
+            <p className="text-lg font-medium text-gray-200">{user?.uid}</p>
             <p className="text-sm text-gray-400">
               {user?.email || "No Email Provided"}
             </p>

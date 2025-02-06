@@ -1,4 +1,4 @@
-"use client"
+"use client";
 import { useState } from "react";
 import { FaSquareInstagram } from "react-icons/fa6";
 import { FaSquareXTwitter } from "react-icons/fa6";
@@ -12,12 +12,12 @@ interface ListItem {
   listItems: string[];
 }
 
-const FooterDataItems=[
-  {title:"ABOUT", listItems:["Our Blog", "Press"]},
-  {title:"TEAMS", listItems:["My Account", "Payment"]},
-  {title:"OTHERS", listItems:["Support", "Tutorial"]},
-  {title:"CONTACT", listItems:["vfit699@gmail.com", "+069 999 7378"]},
-]
+const FooterDataItems = [
+  { title: "ABOUT", listItems: ["Our Blog", "Press"] },
+  { title: "TEAMS", listItems: ["My Account", "Payment"] },
+  { title: "OTHERS", listItems: ["Support", "Tutorial"] },
+  { title: "CONTACT", listItems: ["vfit699@gmail.com", "+069 999 7378"] },
+];
 
 const Footer = () => {
   return (
@@ -60,13 +60,9 @@ const Footer = () => {
           <div className="hidden md:flex justify-start items-start flex-col">
             <GiMuscleUp size={80} color="white" />
           </div>
-          {
-            FooterDataItems.map((item:ListItem, index:number)=>(
-              
-                <FooterListItem FooterData={item} key={index}/>
-     
-            ))
-          }
+          {FooterDataItems.map((item: ListItem, index: number) => (
+            <FooterListItem FooterData={item} key={index} />
+          ))}
         </div>
       </div>
       <div className="py-4 ">
@@ -92,28 +88,39 @@ const Footer = () => {
 export default Footer;
 
 const FooterListItemMobile = ({ FooterData }: { FooterData: ListItem }) => {
-  const [isOpen,setIsOpen]=useState<boolean>(false);
+  const [isOpen, setIsOpen] = useState<boolean>(false);
   return (
     <div>
-    <ul className="text-white flex flex-col gap-4 xs:hidden list-none">
-      <li className="text-lg font-bold xs:underline underline-offset-4 flex items-center justify-between" key="footer-title">
-        {FooterData.title}
-        {
-          isOpen?
-          <IoIosArrowUp className="block xs:hidden" onClick={()=>{setIsOpen(!isOpen)}}/>
-          :
-          <IoIosArrowDown className="block xs:hidden" onClick={()=>{setIsOpen(!isOpen)}}/>
-        }
-      </li>
-      {isOpen &&
-        FooterData.listItems.map((item:string, index)=>(
-          <li className="text-sm" key={index}>
-            {item}
-          </li>
-        ))
-      }
-    </ul>
-    <div className="w-full h-0.5 bg-white block xs:hidden mt-2"></div>
+      <ul className="text-white flex flex-col gap-4 xs:hidden list-none">
+        <li
+          className="text-lg font-bold xs:underline underline-offset-4 flex items-center justify-between"
+          key="footer-title"
+        >
+          {FooterData.title}
+          {isOpen ? (
+            <IoIosArrowUp
+              className="block xs:hidden"
+              onClick={() => {
+                setIsOpen(!isOpen);
+              }}
+            />
+          ) : (
+            <IoIosArrowDown
+              className="block xs:hidden"
+              onClick={() => {
+                setIsOpen(!isOpen);
+              }}
+            />
+          )}
+        </li>
+        {isOpen &&
+          FooterData.listItems.map((item: string, index) => (
+            <li className="text-sm" key={index}>
+              {item}
+            </li>
+          ))}
+      </ul>
+      <div className="w-full h-0.5 bg-white block xs:hidden mt-2"></div>
     </div>
   );
 };
@@ -121,32 +128,39 @@ const FooterListItemMobile = ({ FooterData }: { FooterData: ListItem }) => {
 const FooterListItemDesktop = ({ FooterData }: { FooterData: ListItem }) => {
   return (
     <div>
-    <ul className="text-white flex flex-col gap-4 list-none">
-      <li className="text-lg font-bold underline underline-offset-4 flex items-center justify-between" key="title">
-        {FooterData.title}
-      </li>
-      {
-        FooterData.listItems.map((item:string, index)=>(
+      <ul className="text-white flex flex-col gap-4 list-none">
+        <li
+          className="text-lg font-bold underline underline-offset-4 flex items-center justify-between"
+          key="title"
+        >
+          {FooterData.title}
+        </li>
+        {FooterData.listItems.map((item: string, index) => (
           <li className="text-sm" key={index}>
             {item}
           </li>
-        ))
-      }
-    </ul>
-    <div className="w-full h-0.5 bg-white block xs:hidden mt-2"></div>
+        ))}
+      </ul>
+      <div className="w-full h-0.5 bg-white block xs:hidden mt-2"></div>
     </div>
   );
 };
 
-const FooterListItem=({ FooterData }: { FooterData: ListItem })=>{
-  return(
+const FooterListItem = ({ FooterData }: { FooterData: ListItem }) => {
+  return (
     <div>
-    <div className="block xs:hidden">
-      <FooterListItemMobile FooterData={FooterData} key="footer-item-mobile"/>
+      <div className="block xs:hidden">
+        <FooterListItemMobile
+          FooterData={FooterData}
+          key="footer-item-mobile"
+        />
+      </div>
+      <div className="hidden xs:block">
+        <FooterListItemDesktop
+          FooterData={FooterData}
+          key="footer-item-desktop"
+        />
+      </div>
     </div>
-    <div className="hidden xs:block">
-    <FooterListItemDesktop FooterData={FooterData} key="footer-item-desktop"/>
-    </div>
-    </div>
-  )
-}
+  );
+};

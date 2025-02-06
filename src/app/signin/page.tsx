@@ -3,14 +3,11 @@ import { useState } from "react";
 import { signIn } from "@/service";
 import { useRouter } from "next/navigation";
 
-
 const SignIn: React.FC = () => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [error, setError] = useState<string | null>(null);
   const router = useRouter();
-
-
 
   const handleSignIn = async (e: React.FormEvent) => {
     e.preventDefault();

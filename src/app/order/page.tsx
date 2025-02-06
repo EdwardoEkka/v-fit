@@ -1,19 +1,18 @@
-"use client"
+"use client";
 import { FC } from "react";
-import Footer from "@/components/common/footer/footer"
-import { MainNav } from "@/components/common/nav/main-navbar"
-import withAuth from "../auth/withAuth"
+import Footer from "@/components/common/footer/footer";
+import { MainNav } from "@/components/common/nav/main-navbar";
+import withAuth from "../auth/withAuth";
 
+const OrderPage: FC = () => {
+  return (
+    <div>
+      <MainNav />
 
-const OrderPage: FC=()=>{
-    return(
-        <div>
-        <MainNav/>
-
-        <Footer/>
-        </div>
-    )
-}
+      <Footer />
+    </div>
+  );
+};
 
 const ProtectedApp = withAuth(OrderPage) as FC;
 

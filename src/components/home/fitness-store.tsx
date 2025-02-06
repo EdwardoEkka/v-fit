@@ -1,6 +1,6 @@
 "use client";
 import EmblaCarousel from "../carousel/EmblaCarousel";
-import { EmblaOptionsType } from 'embla-carousel'
+import { EmblaOptionsType } from "embla-carousel";
 
 const Images = [
   "/img/stock/dumbell.png",

@@ -69,7 +69,13 @@ const BlogBanner = ({ images }: BlogBannerProps) => {
 
 export default BlogBanner;
 
-const ImageContainer = ({ reference, index }: { reference: string; index: number }) => {
+const ImageContainer = ({
+  reference,
+  index,
+}: {
+  reference: string;
+  index: number;
+}) => {
   return (
     <div
       className={`relative h-full w-full overflow-hidden border border-[#6E07F3] rounded-lg shadow-lg ${

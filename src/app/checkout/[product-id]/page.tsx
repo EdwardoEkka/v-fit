@@ -77,7 +77,8 @@ const Page = () => {
                           </span>
                         </p>
                         <p className="text-lg font-medium text-gray-300">
-                          Total Price: USD {productQuantity*orderProduct.price.discountedPrice}
+                          Total Price: USD{" "}
+                          {productQuantity * orderProduct.price.discountedPrice}
                         </p>
                       </div>
 
@@ -102,13 +103,16 @@ const Page = () => {
                   </div>
                 )}
               </div>
-      
-              <div className="flex justify-center items-center p-6 bg-gray-900 text-white rounded-2xl shadow-xl backdrop-blur-lg bg-opacity-50">
-                <PaymentOptions priceAmount={(productQuantity * (orderProduct?.price?.discountedPrice ?? 0)) || 0}/></div>
-              </div>
-  
 
-      
+              <div className="flex justify-center items-center p-6 bg-gray-900 text-white rounded-2xl shadow-xl backdrop-blur-lg bg-opacity-50">
+                <PaymentOptions
+                  priceAmount={
+                    productQuantity *
+                      (orderProduct?.price?.discountedPrice ?? 0) || 0
+                  }
+                />
+              </div>
+            </div>
           ) : (
             <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
               {orderProduct && (
@@ -147,7 +151,10 @@ const Page = () => {
                   </div>
                   <div className="mt-4 flex gap-2 flex-wrap">
                     {orderProduct.category.tags?.map((tag, index) => (
-                      <span className="px-3 py-1 text-sm font-medium text-gray-700 bg-gray-200 rounded-full" key={index}>
+                      <span
+                        className="px-3 py-1 text-sm font-medium text-gray-700 bg-gray-200 rounded-full"
+                        key={index}
+                      >
                         {tag}
                       </span>
                     ))}
@@ -171,7 +178,10 @@ const Page = () => {
                       <FaPlus />
                     </button>
                   </div>
-                  <h5 className="mt-4 text-white text-xl">Total Price: USD {productQuantity*orderProduct.price.discountedPrice}</h5>
+                  <h5 className="mt-4 text-white text-xl">
+                    Total Price: USD{" "}
+                    {productQuantity * orderProduct.price.discountedPrice}
+                  </h5>
                 </div>
               )}
               <div className="bg-black/30 backdrop-blur-lg border border-white/10 p-6 rounded-xl shadow-lg">
@@ -216,7 +226,7 @@ const Page = () => {
 
 export default Page;
 
-const PaymentOptions = ({priceAmount}:{priceAmount:number}) => {
+const PaymentOptions = ({ priceAmount }: { priceAmount: number }) => {
   const [razorpayLoaded, setRazorpayLoaded] = useState(false);
 
   useEffect(() => {
@@ -235,13 +245,15 @@ const PaymentOptions = ({priceAmount}:{priceAmount:number}) => {
 
     const options = {
       key: "rzp_test_AAFgc8dQHevvPW",
-      amount: {priceAmount},
+      amount: { priceAmount },
       currency: "INR",
       name: "Your Company",
       description: "Payment for Order #1234",
-      image: "/logo.png", 
+      image: "/logo.png",
       handler: (response: any) => {
-        alert(`Payment Successful! Payment ID: ${response.razorpay_payment_id}`);
+        alert(
+          `Payment Successful! Payment ID: ${response.razorpay_payment_id}`
+        );
       },
       prefill: {
         name: "John Doe",
@@ -267,6 +279,3 @@ const PaymentOptions = ({priceAmount}:{priceAmount:number}) => {
     </div>
   );
 };
-
-
-

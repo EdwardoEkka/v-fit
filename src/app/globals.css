@@ -8,21 +8,24 @@
 
 
 @layer base {
-  ul, ol {
+
+  ul,
+  ol {
     list-style: revert;
   }
-  li{
+
+  li {
     margin-left: 16px;
   }
 }
 
-body{
+body {
   font-family: 'Montserrat', sans-serif;
 }
 
 .container {
   width: 1280px;
-  margin: 0 auto; 
+  margin: 0 auto;
   padding: 0 16px;
 }
 
@@ -50,10 +53,10 @@ body{
 }
 
 
-.hero-1{
+.hero-1 {
   font-family: 'azonix', sans-serif;
 }
 
-.page-footer{
+.page-footer {
   background-color: black;
 }

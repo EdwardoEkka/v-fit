@@ -15,7 +15,7 @@ import { auth } from "../../firebase";
 export default function Home() {
   useEffect(() => {
     const token = localStorage.getItem("authToken");
-  
+
     if (token) {
       // Check if a user session exists
       onAuthStateChanged(auth, async (user) => {
